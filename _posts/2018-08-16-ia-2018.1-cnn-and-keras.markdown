@@ -1,0 +1,137 @@
+---
+layout: post
+title: Criando um detector de imagens usando CNN e Keras
+date: 2018-08-16 08:25:01
+author: Bruno Teonácio
+summary: Utilização de ferramentas de IA (Keras) para a criação de um simples sistema de reconhecimento de imagens
+categories: ia ufrn 2018.1 cnn keras cifar10
+tags:
+ - ia
+ - ufrn
+ - 2018.1
+ - cnn
+ - keras
+ - cifar10
+---
+<br>
+Olá,
+<br><br>
+Nesse post irei publicar um trabalho desenvolvido durante a disciplina de Inteligência Artificial (IA) na UFRN, semestre 2018.1.<br>
+<br>
+Basicamente, o trabalho trata de um algoritmo de reconhecimento de imagens utilizando o framework Keras e a biblioteca de imagens CIFAR10.
+<br><br>
+A explicação que segue abaixo requer do leitor um conhecimento moderado de inteligência artificial, especificamente na área de CNN (Convolutional Neural Network - Rede Neural Convolucional).
+<br><br>
+Além disso, para fins de explicação do código, não irei entrar em detalhes da teoria que abrange o algoritmo (novamente, o leitor deve ter um conhecimento prévio de CNN).
+<br><br>
+Também seria ideal se o seu computador tivesse acesso a GPU para executar o algoritmo, pois reduziria bastante o tempo de treinamento (de horas para minutos).
+<br><br>
+
+<h1>Cifar10</h1>
+Inicialmente, vamos falar da biblioteca Cifar10. É uma biblioteca de imagens que já vem instalada no Keras, criada para treinamentos de redes neurais.
+Contém 50.000 imagens de treino e 10.000 imagens de teste, divididas em 10 classes diferentes de imagens (avião, automóvel, pássaro, gato, cervo, cachorro, sapo, cavalo, barco e caminhão).
+<br><br>
+
+![cifar10_images_example]({{ "/assets/images/cifar10-display-images.jpeg" | absolute_url }})
+
+<br><br>
+<h1>A Rede</h1>
+Basicamente, a rede implementada consiste em 6 camadas de convolução, sendo as duas primeiras com 32 filtros cada e um tamanho de janela de 3x3, enquanto as outras quatro possuem 64 filtros cada, com o mesmo tamanho de janela (3x3).
+<br><br>
+As 6 camadas são juntas em 3 grupos de 2 camadas cada, onde no final de cada grupo é aplicado uma subamostragem em max pooling (maior valor da região para coleta de amostras), e uma camada de dropout, para evitar overfitting (erro de ajuste entre o treinamento e o teste).
+<br><br>
+No final de tudo, é aplicado uma camada densa para a classificação usando as 10 classes do Cifar10 (citadas anteriormente). O código contendo essas camadas segue abaixo, juntamente com um modelo que explica os 3 grupos de camadas detalhadamente:
+
+{% highlight python linenos %}
+
+from keras.models import Sequential
+from keras.layers import Dense, Conv2D, MaxPooling2D, Dropout, Flatten
+ 
+def createModel():
+    model = Sequential()
+    model.add(Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=input_shape))
+    model.add(Conv2D(32, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+ 
+    model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
+    model.add(Conv2D(64, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+ 
+    model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
+    model.add(Conv2D(64, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+ 
+    model.add(Flatten())
+    model.add(Dense(512, activation='relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(nClasses, activation='softmax'))
+     
+    return model
+
+{% endhighlight %}
+
+![Descrição das camadas da rede]({{ "/assets/images/cnn-model-summary.jpeg" | absolute_url }})
+
+<h1>Treinando a rede </h1>
+Para treinar a rede, foi utilizado o sistema de model do Keras, utilizando uma função de erro de entropia cruzada e o otimizador RMSprop (do Keras) para o treimanento, considerando 10 épocas (Nota: Quando for testar, se não utilizar GPU provavelmente irá demorar de 8 a 10 horas para o treimanento, em média):
+
+{% highlight python linenos %}
+
+model1 = createModel()
+batch_size = 256
+epochs = 100
+model1.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+ 
+history = model1.fit(train_data, train_labels_one_hot, batch_size=batch_size, epochs=epochs, verbose=1, 
+                   validation_data=(test_data, test_labels_one_hot))
+ 
+model1.evaluate(test_data, test_labels_one_hot)
+
+{% endhighlight %}
+
+<h1>Curvas de acerto</h1>
+Em seguida é mostrado em dois gráficos (perdas e acerto) a precisão da rede:
+
+{% highlight python linenos  %}
+
+# Gráfico de curvas de perda
+plt.figure(figsize=[8,6])
+plt.plot(history.history['loss'],'r',linewidth=3.0)
+plt.plot(history.history['val_loss'],'b',linewidth=3.0)
+plt.legend(['Training loss', 'Validation Loss'],fontsize=18)
+plt.xlabel('Epochs ',fontsize=16)
+plt.ylabel('Loss',fontsize=16)
+plt.title('Loss Curves',fontsize=16)
+ 
+# Gráfico de curvas de acerto
+plt.figure(figsize=[8,6])
+plt.plot(history.history['acc'],'r',linewidth=3.0)
+plt.plot(history.history['val_acc'],'b',linewidth=3.0)
+plt.legend(['Training Accuracy', 'Validation Accuracy'],fontsize=18)
+plt.xlabel('Epochs ',fontsize=16)
+plt.ylabel('Accuracy',fontsize=16)
+plt.title('Accuracy Curves',fontsize=16)
+
+{% endhighlight %}
+
+![Gráficos de perdas e acertos]({{ "/assets/images/cnn-lost-curves.jpg" | absolute_url }})
+
+Note que, mesmo a rede utilizando camadas de dropout, ainda ocorreu um certo overfitting nas curvas, provavelmente causado pela pouca quantidade de imagens de treinamento.
+<br><br>
+Isso mesmo: 50.000 imagens não são suficientes... ;(
+<br><br>
+Uma solução possível seria aumentar os dados com as mesmas imagens, criando novas imagens a partir de modificações em ângulo das originais (por exemplo, rotação). Essa solução não foi implementada no algoritmo, mas acredita-se que possa melhorar o overfitting da rede.
+
+<h1>Dúvidas?</h1>
+Se as dúvidas forem em relação a termos ou alguma teoria desconhecida, nota-se que no início dessa postagem foi dito que espera-se que aquele que ler deve ter esses conhecimentos.
+<br><br>
+Se as dúvidas forem em relação ao Keras e as funções para a CNN, a documentação do mesmo segue nas referências abaixo.
+<br><br>
+Outras dúvidas (código, compilação, etc) podem ser colocadas abaixo nos comentários para futuras discussões.
+
+<h1>Referências</h1>
+- [Documentação do Keras](https://keras.io/layers/convolutional/)
+- [Código da CNN no Github](https://github.com/teonacio/UFRN_2018.1_IA_Keras_Image_Classification)
