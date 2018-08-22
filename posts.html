@@ -52,4 +52,9 @@ make-smaller-titles: true
     {% endfor %}
     </div>
 
+    {% if site.disqus.shortname %}
+  	{% include disqus.html %}
+    {% endif %}
+
+
   </div>

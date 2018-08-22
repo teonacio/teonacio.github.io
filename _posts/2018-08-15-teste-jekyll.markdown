@@ -13,8 +13,3 @@ Olá.
 <br><br>Teste para verificar a funcionalidade do blog.
 <br><br>Se você está vendo essa publicação, significa que o blog está funcionando.
 <br><br>Bruno Teonácio
-
-{% if site.disqus.shortname %}
-  {% include disqus.html %}
-{% endif %}
-
