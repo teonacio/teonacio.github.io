@@ -32,7 +32,7 @@ facebook_link: https://pt-br.facebook.com/bruno.teonacio
 disqus:
     # Leave shortname blank to disable comments site-wide.
     # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
-    shortname: teonacio.github.io
+    shortname: teonacio-github-io
 
 # Build settings
 markdown: kramdown
