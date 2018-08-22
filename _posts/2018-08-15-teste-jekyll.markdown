@@ -15,6 +15,6 @@ Olá.
 <br><br>Bruno Teonácio
 
 {% if site.disqus.shortname %}
-  {% include disqus_comments.html %}
+  {% include disqus.html %}
 {% endif %}
 
