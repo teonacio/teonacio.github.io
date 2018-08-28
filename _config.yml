@@ -28,11 +28,7 @@ facebook_link: https://pt-br.facebook.com/bruno.teonacio
 #footer_right: "&lt;/&gt; on <a href=\"https://github.com/jacobtomlinson/carte-noire\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
 
 # Disqus Comments
-# https://desiredpersona.com/disqus-comments-jekyll/
-disqus:
-    # Leave shortname blank to disable comments site-wide.
-    # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
-    shortname: teonacio-github-io
+disqus_shortname: teonacio
 
 # Build settings
 markdown: kramdown
