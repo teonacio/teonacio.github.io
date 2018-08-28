@@ -4,6 +4,7 @@ title: Blog Ajuste Técnico (Sugestão)
 date: 2018-08-21 16:44:07
 author: Bruno Teonácio
 summary: Sugestão de blog para interessados em Engenharia de Computação
+comments: true
 categories: engcomp ufrn ajuste_tecnico
 tags:
  - jekyll

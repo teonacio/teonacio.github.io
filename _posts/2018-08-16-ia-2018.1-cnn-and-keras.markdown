@@ -4,6 +4,7 @@ title: Criando um detector de imagens usando CNN e Keras
 date: 2018-08-16 08:25:01
 author: Bruno Teonácio
 summary: Utilização de ferramentas de IA (Keras) para a criação de um simples sistema de reconhecimento de imagens
+comments: true
 categories: ia ufrn 2018.1 cnn keras cifar10
 tags:
  - ia
