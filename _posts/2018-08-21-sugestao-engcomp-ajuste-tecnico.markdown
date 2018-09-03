@@ -1,4 +1,5 @@
 ---
+visible: 1
 layout: post
 title: Blog Ajuste Técnico (Sugestão)
 date: 2018-08-21 16:44:07
