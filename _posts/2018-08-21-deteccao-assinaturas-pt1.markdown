@@ -1,4 +1,5 @@
 ---
+visible: 1
 layout: post
 
 title: Detecção de assinaturas em listas de presenças - Parte 1
