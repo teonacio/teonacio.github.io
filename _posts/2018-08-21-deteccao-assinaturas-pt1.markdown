@@ -34,7 +34,7 @@ O algoritmo cuja discussão será iniciada aqui visa um reconhecimento automáti
 <h1>Modelo</h1>
 Abaixo segue um link para o modelo de lista de assinaturas sobre o qual o algoritmo foi construido:
 <br><br>
-[Link para o modelo](https://github.com/teonacio/GIT_lista_de_presenca/blob/master/_pdf/qrnovo.pdf)
+[Link para o modelo](https://github.com/teonacio/GIT_lista_de_presenca/blob/master/modelo_lista.pdf)
 <br><br>
 Pergunta 1: Pode usar outro modelo?
 <br>
