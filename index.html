@@ -25,7 +25,7 @@ make-smaller-titles: true
 
             <div class="articles">
             {% for post in paginator.posts %}
-            {% if post.visible == 1 %}
+            {% if post.visible != 0 %}
               <h2>Latest Articles</h2>
 
               <ul>
