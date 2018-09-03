@@ -24,26 +24,26 @@ make-smaller-titles: true
           <div class="col-md-12 main content-panel">
 
             <div class="articles">
-            {% for post in paginator.posts %}
-            {% if post.visible != 0 %}
+
               <h2>Latest Articles</h2>
 
               <ul>
                   {% for post in site.posts limit: site.post_limit %}
+                  {% if post.visible != 0 %}
 
                       <li>
                           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                           <small class="hidden-xs">{{ post.date | date: "%B %-d, %Y" }}</small>
                       </li>
 
+                  {% endif %}
                   {% endfor %}
                   <li>
                       <small><i><a href="{{ site.baseurl }}/posts/">more...</a></i></small>
                   </li>
               </ul>
 
-            {% endif %}
-            {% endfor %}
+            
             </div>
 
         </div>
