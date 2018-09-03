@@ -24,7 +24,8 @@ make-smaller-titles: true
           <div class="col-md-12 main content-panel">
 
             <div class="articles">
-
+            {% for post in paginator.posts %}
+            {% if post.visible == 1 %}
               <h2>Latest Articles</h2>
 
               <ul>
@@ -41,6 +42,8 @@ make-smaller-titles: true
                   </li>
               </ul>
 
+            {% endif %}
+            {% endfor %}
             </div>
 
         </div>
