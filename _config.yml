@@ -28,7 +28,7 @@ facebook_link: https://pt-br.facebook.com/bruno.teonacio
 #footer_right: "&lt;/&gt; on <a href=\"https://github.com/jacobtomlinson/carte-noire\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
 
 # Disqus Comments
-disqus_shortname: teonacio
+disqus_shortname: teonacio-github-io
 
 # Build settings
 markdown: kramdown
