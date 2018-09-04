@@ -15,7 +15,7 @@ tags:
 ---
 Olá.
 <br><br>
-Para aqueles interessados em engenharia de computação, sugiro aqui um blog para leitura: [Ajuste Tecnico](https://ajustetecnico.github.io/).
+Para aqueles interessados em engenharia de computação, sugiro aqui um blog para leitura: [Ajuste Técnico](https://ajustetecnico.github.io/).
 <br><br>
 O blog trata de projetos desenvolvidos por alunos de engenharia de computação na Universidade Federal do Rio Grande do Norte - UFRN.
 <br><br>
