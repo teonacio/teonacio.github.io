@@ -62,3 +62,9 @@ Ou seja: Todo o resto do modelo (espaços em branco) não interferem no algoritm
 No próximo post, iremos tratar como reajustar imagens "desalinhadas" (note na última imagem do post que o sub-retângulo ficou desalinhado, se não for corrigido esse detalhe irá interferir no algoritmo), além de explicar como tratar a imagem de forma binária (essencial para o algoritmo).
 
 Até lá!
+
+<h1>Referências</h1>
+- [Repositório do projeto (Github)](https://github.com/teonacio/GIT_lista_de_presenca)
+- [Site do OpenCV](https://opencv.org/)
+- [Site do QR Code](https://en.wikipedia.org/wiki/QR_code)
+- [Site do ZBar](http://zbar.sourceforge.net/)
