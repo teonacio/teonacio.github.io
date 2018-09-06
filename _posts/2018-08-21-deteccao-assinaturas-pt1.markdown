@@ -30,7 +30,7 @@ Focando no método pelas assinaturas dos alunos, é um método bastante utilizad
 <br><br>
 O problema é quando precisa salvar essas assinaturas em algum outro lugar (como na Web), pois demanda um tempo considerável para o docente ter que conferir folha a folha, assinatura a assinatura, para salva-las no site da instutição (muitas vezes o mesmo opta por colocar presença em todos os alunos, todos os dias, para se livrar desse trabalho).
 <br><br>
-O algoritmo cuja discussão será iniciada aqui visa um reconhecimento automático dessas assinaturas, utilizando de ferramentas como OpenCV (biblioteca multi-linguagem para algoritmos em Visão Computacional) e QR code (código de barras multidimensional bastante conhecido pela internet).
+O algoritmo cuja discussão será iniciada aqui visa um reconhecimento automático dessas assinaturas, utilizando de ferramentas como [OpenCV](https://opencv.org/) (biblioteca multi-linguagem para algoritmos em Visão Computacional) e [QR Code](https://en.wikipedia.org/wiki/QR_code) (código de barras multidimensional bastante conhecido pela internet).
 <br>
 <h1>Modelo</h1>
 Abaixo segue um link para o modelo de lista de assinaturas sobre o qual o algoritmo foi construido:
@@ -47,7 +47,7 @@ Note os QR codes nos cantos da folha, iremos discutir eles mais adiante. Não se
 Acredito que vocês já devem estar familiarizados com QR codes, certo? De qualquer forma, segue abaixo um modelo de QR code:
 ![Exemplo de QR code]({{ "/assets/images/qrcode-example.png"}})
 
-Apesar dos círculos vermelhos estarem exagerados - :) - o intuito é explicar que, utilizando a biblioteca ZBar (biblioteca para detecção de QR codes e barcodes em geral), conseguimos recuperar não apenas o conteúdo do QR code scaneado, mas também as posições dos pixels extremos de cada QR code.
+Apesar dos círculos vermelhos estarem exagerados - :) - o intuito é explicar que, utilizando a biblioteca [ZBar](http://zbar.sourceforge.net/) (biblioteca para detecção de QR codes e barcodes em geral), conseguimos recuperar não apenas o conteúdo do QR code scaneado, mas também as posições dos pixels extremos de cada QR code.
 <br><br>
 Para facilitar a detecção, cada QR code foi configurado com um texto para que, ao ser scaneado, o algoritmo saiba diferenciar os QR codes (SE - Superior Esquerdo, SD - Superior Direito, IE - Inferior Esquerdo, ID - Inferior Direito).
 <br><br>
@@ -65,6 +65,3 @@ Até lá!
 
 <h1>Referências</h1>
 - [Repositório do projeto (Github)](https://github.com/teonacio/GIT_lista_de_presenca)
-- [Site do OpenCV](https://opencv.org/)
-- [Site do QR Code](https://en.wikipedia.org/wiki/QR_code)
-- [Site do ZBar](http://zbar.sourceforge.net/)
