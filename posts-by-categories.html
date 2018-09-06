@@ -8,15 +8,15 @@ make-smaller-titles: true
   <div class="row index all-posts">
 
     <h1 class="header author-header">{{ site.author_name }}</h1>
-    <h2 class="header" itemprop="headline">All posts</h2>
-    <h2 class="header categories" itemprop="headline"><small>grouped by
+    <h2 class="header" itemprop="headline">Todas as postagens</h2>
+    <h2 class="header categories" itemprop="headline"><small>agrupadas por
 
       <div class="dropdown btn-group">
-        <button class="btn btn-categories dropdown-toggle btn-xs" type="button" data-toggle="dropdown">Categories
+        <button class="btn btn-categories dropdown-toggle btn-xs" type="button" data-toggle="dropdown">Categorias
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="{{ site.baseurl }}/posts/">Years</a></li>
+          <li><a href="{{ site.baseurl }}/posts/">Anos</a></li>
         </ul>
       </div>
 
@@ -39,4 +39,15 @@ make-smaller-titles: true
       {% endfor %}
 
   </div>
+</div>
+
+<div class="footer clearfix">
+    <div class="col-md-6">
+        Copyright © 2018 by <a href="http://github.com/teonacio" target="_blank">teonacio</a>.
+        All rights reserved.<br>Theme by <a href="https://twitter.com/_JacobTomlinson" target="_blank">Jacob
+        Tomlinson</a> (<a href="https://github.com/jacobtomlinson/carte-noire" target="_blank"><i class="fa fa-github-alt"></i></a>)
+    </div>
+    <div class="col-md-6">
+        &lt;/&gt; on <a href="https://github.com/teonacio/teonacio.github.io" target="_blank">Github</a> &nbsp;<i class="fa fa-github-alt"></i>
+    </div>
 </div>
