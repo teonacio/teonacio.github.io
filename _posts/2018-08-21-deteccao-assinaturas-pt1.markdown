@@ -30,7 +30,7 @@ Focando no método pelas assinaturas dos alunos, é um método bastante utilizad
 <br><br>
 O problema é quando precisa salvar essas assinaturas em algum outro lugar (como na Web), pois demanda um tempo considerável para o docente ter que conferir folha a folha, assinatura a assinatura, para salva-las no site da instutição (muitas vezes o mesmo opta por colocar presença em todos os alunos, todos os dias, para se livrar desse trabalho).
 <br><br>
-O algoritmo cuja discussão será iniciada aqui visa um reconhecimento automático dessas assinaturas, utilizando de ferramentas como <a href="https://opencv.org/" target="_blank">OpenCV</a> (biblioteca multi-linguagem para algoritmos em Visão Computacional) e <a href="https://en.wikipedia.org/wiki/QR_code" target="_blank">QR Code</a>(código de barras multidimensional bastante conhecido pela internet).
+O algoritmo cuja discussão será iniciada aqui visa um reconhecimento automático dessas assinaturas, utilizando de ferramentas como <a href="https://opencv.org/" target="_blank">OpenCV</a> (biblioteca multi-linguagem para algoritmos em Visão Computacional) e <a href="https://en.wikipedia.org/wiki/QR_code" target="_blank">QR Code</a> (código de barras multidimensional bastante conhecido pela internet).
 <br>
 <h1>Modelo</h1>
 Abaixo segue um link para o modelo de lista de assinaturas sobre o qual o algoritmo foi construido:
