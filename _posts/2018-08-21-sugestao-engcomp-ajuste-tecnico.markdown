@@ -15,10 +15,10 @@ tags:
 ---
 Olá.
 <br><br>
-Para aqueles interessados em engenharia de computação, sugiro aqui um blog para leitura: [Ajuste Técnico](https://ajustetecnico.github.io/).
+Para aqueles interessados em engenharia de computação, sugiro aqui um blog para leitura: <a href="https://ajustetecnico.github.io/" target="_blank">Ajuste Técnico</a>
 <br><br>
-O blog trata de projetos desenvolvidos por alunos de engenharia de computação na Universidade Federal do Rio Grande do Norte - UFRN.
+O blog trata de projetos desenvolvidos por alunos de engenharia de computação na Universidade Federal do Rio Grande do Norte - <a href="https://www.ufrn.br/" target="_blank">UFRN</a>.
 <br><br>
-Excelente leitura para aqueles que pretendem ingressar em engenharia de computação (não necessariamente para UFRN, pode ser para qualquer universidade), ou mesmo para alunos de engenharia de computação que queiram conhecer projetos desenvolvidos por seus conteporaneos.
+Excelente leitura para aqueles que pretendem ingressar em engenharia de computação (não necessariamente para UFRN, pode ser para qualquer universidade), ou mesmo para alunos de engenharia de computação que queiram conhecer projetos desenvolvidos por seus contemporâneos.
 <br><br>
 Até mais!
