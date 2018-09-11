@@ -19,7 +19,7 @@ tags:
 ---
 Olá,
 <br><br>
-Nesse post será iniciado uma discussão acerca de um dos trabalhos desenvolvidos durante a minha graduação na Universidade Federal do Rio Grande do Norte - UFRN.
+Nesse post será iniciado uma discussão acerca de um dos trabalhos desenvolvidos durante a minha graduação na Universidade Federal do Rio Grande do Norte - <a href="https://www.ufrn.br/" target="_blank">UFRN</a>.
 <br><br>
 Nele, iremos tratar de como detectar assinaturas (escritas a mão pelos alunos) em listas de presenças, muito utilizadas em nível de graduação para a presença dos alunos.
 <br><br>
